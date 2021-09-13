@@ -2,19 +2,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>AdvancedProgrammerGuide</artifactId>
+        <groupId>org.mindidea</groupId>
+        <version>0.1</version>
+    </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.mindidea</groupId>
-    <artifactId>AdvancedProgrammerGuide</artifactId>
-    <packaging>pom</packaging>
-    <version>0.1</version>
-    <modules>
-        <module>00-Java-Core</module>
-        <module>01-Java-8-Action</module>
-        <module>02-Java-Concurrency</module>
-        <module>03-Java-Framework</module>
-        <module>04-Java-Microservice</module>
-    </modules>
+    <artifactId>02-Java-Concurrency</artifactId>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
