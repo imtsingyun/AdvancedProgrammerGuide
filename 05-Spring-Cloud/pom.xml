@@ -5,17 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.mindidea</groupId>
-    <artifactId>AdvancedProgrammerGuide</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>05-Spring-Cloud</artifactId>
     <version>0.1</version>
-    <modules>
-        <module>00-Java-Core</module>
-        <module>01-Java-8-Action</module>
-        <module>02-Java-Concurrency</module>
-        <module>03-Spring-Framework</module>
-        <module>04-Spring-Boot</module>
-        <module>05-Spring-Cloud</module>
-    </modules>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
