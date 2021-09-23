@@ -1,4 +1,6 @@
-Advanced Programmer Guide
+# Advanced Programmer Guide
+
+## 项目目录
 
 - 00-Java-Core : Java 核心内容
     - core00_basic : Java 基础知识
@@ -48,3 +50,19 @@ Advanced Programmer Guide
 - 04-Spring-Boot
 - 05-Spring-Cloud
 - 06-Data-Structure-Algorithm
+
+## 面试题整理
+
+#### Java 基础知识
+
+##### 1. Exception 和 Error
+1. 都继承 Throwable 类，只有 Throwable 类型的实例才可以被抛出（throw）或（catch）
+2. Exception 是程序正常运行中可以预料的意外情况
+3. Error 则是会导致程序处于非正常、不可恢复状态，比如 OutOfMemoryError，StackOverflowError，NoClassDefFoundError
+4. 可检查 Exception 在代码中必须显式的进行捕获处理，编译期会检查
+5. 不可检查的 Exception, 比如 NullPointerException、ArrayIndexOutOfBoundsException、ClassNotFoundException
+
+##### 2. NoClassDefFoundError 和 ClassNotFoundException
+
+
+#### Java 进阶知识
