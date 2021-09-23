@@ -5,19 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.mindidea</groupId>
-    <artifactId>AdvancedProgrammerGuide</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>06-Data-Structure-Algorithm</artifactId>
     <version>0.1</version>
-    <modules>
-        <module>00-Java-Core</module>
-        <module>01-Java-8-Action</module>
-        <module>02-Java-Concurrency</module>
-        <module>03-Spring-Framework</module>
-        <module>04-Spring-Boot</module>
-        <module>05-Spring-Cloud</module>
-        <module>06-data-structure-algorithm</module>
-        <module>06-Data-Structure-Algorithm</module>
-    </modules>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
