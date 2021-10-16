@@ -1,8 +1,5 @@
 package org.mindidea.core00_basic;
 
-import java.util.Objects;
-import java.util.Optional;
-
 /**
  * @author Tsingyun(青雲)
  * @version V1.0
@@ -10,14 +7,9 @@ import java.util.Optional;
  * https://mindidea.org
  */
 public class Demo {
-   public static void main(String[] args) {
-       System.out.println("Hello World");
-
-       String a = null;
-       Objects.requireNonNull(a);
-
-       System.out.println(a.length());
-
-
-   } 
+    public static void main(String[] args) {
+        System.out.println("Hello World");
+        char testChar = '\uFFFF';
+        System.out.println(testChar);
+    }
 }

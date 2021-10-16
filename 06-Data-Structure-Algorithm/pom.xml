@@ -7,6 +7,14 @@
     <groupId>org.mindidea</groupId>
     <artifactId>06-Data-Structure-Algorithm</artifactId>
     <version>0.1</version>
+    <dependencies>
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
