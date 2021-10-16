@@ -22,7 +22,7 @@ public class Demo01 {
 	public static void heapify(Integer[] arr, int n, int index) {
 		if (index >= n) {
 			return;
-		}测试
+		}
 		// 找出 index 节点以及其子节点中最大的节点
 		// index 节点的 左子节浿点
 		int c1 = 2*index + 1;
