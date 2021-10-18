@@ -13,7 +13,6 @@ public class Demo3 {
 					maxIndex = begin;
 				}
 			}
-
 		}
 	}
 

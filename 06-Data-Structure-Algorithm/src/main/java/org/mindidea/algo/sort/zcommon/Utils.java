@@ -19,11 +19,16 @@ public class Utils {
 		printArr(generateArr(10, 20));
 	}
 
-	public static Integer[] generateArr(int begin, int end) {
-		List<Integer> collect = IntStream.rangeClosed(begin, end).boxed().collect(Collectors.toList());
-		List<Integer> list = randomList(collect);
-		Integer[] arr = new Integer[list.size()];
-		list.toArray(arr);
+	public static Integer[] generateArr(int maxValue, int size) {
+		Integer[] arr = new Integer[size];
+		for (int i = 0; i < size; i++) {
+			Random random = new Random(i);
+			int v = random.nextInt(maxValue);
+			arr[i] = v;
+		}
+		System.out.println("================开始生成数组================");
+		printArr(arr);
+		System.out.println("================生成数组结束================");
 		return arr;
 	}
 
@@ -38,4 +43,11 @@ public class Utils {
 		} while (sourceList.size() > 0);
 		return randomList;
 	}
+
+	public static void swap(Integer[] nums, int i1, int i2) {
+		int tmp = nums[i1];
+		nums[i1] = nums[i2];
+		nums[i2] = tmp;
+	}
 }
+
