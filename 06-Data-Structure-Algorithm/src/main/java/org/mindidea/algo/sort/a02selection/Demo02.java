@@ -2,7 +2,7 @@ package org.mindidea.algo.sort.a02selection;
 
 import org.mindidea.algo.sort.zcommon.Utils;
 
-public class Demo2 {
+public class Demo02 {
     public static void main(String[] args) {
         Integer[] integers = Utils.generateArr(20, 35);
         Utils.printArr(integers);

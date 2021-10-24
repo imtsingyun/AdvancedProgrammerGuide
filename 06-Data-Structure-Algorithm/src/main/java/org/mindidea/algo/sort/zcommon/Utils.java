@@ -22,7 +22,7 @@ public class Utils {
 	public static Integer[] generateArr(int maxValue, int size) {
 		Integer[] arr = new Integer[size];
 		for (int i = 0; i < size; i++) {
-			Random random = new Random(i);
+			Random random = new Random();
 			int v = random.nextInt(maxValue);
 			arr[i] = v;
 		}

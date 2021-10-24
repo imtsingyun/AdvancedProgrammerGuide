@@ -1,6 +1,6 @@
 package org.mindidea.algo.sort.a02selection;
 
-public class Demo3 {
+public class Demo03 {
 	public static void main(String[] args) {
 
 	}

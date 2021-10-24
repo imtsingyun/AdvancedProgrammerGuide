@@ -1,6 +1,6 @@
 package org.mindidea.algo.sort.a01bubble;
 
-public class Demo3 {
+public class Demo03 {
 	@SuppressWarnings("DuplicatedCode")
 	public static void bubbleSort(Integer[] arr) {
 		for (int end = arr.length - 1; end > 0; end--) {

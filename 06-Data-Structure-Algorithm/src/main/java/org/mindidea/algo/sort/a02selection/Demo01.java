@@ -6,7 +6,7 @@ import org.mindidea.algo.sort.zcommon.Utils;
  * 选择排序
  * 1. 选择数组中最大的元素和最后一个元素交换位置
  */
-public class Demo1 {
+public class Demo01 {
 	public static void main(String[] args) {
 		Integer[] arr = Utils.generateArr(10, 20);
 		Utils.printArr(arr);

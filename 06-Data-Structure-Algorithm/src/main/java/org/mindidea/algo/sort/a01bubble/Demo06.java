@@ -2,9 +2,9 @@ package org.mindidea.algo.sort.a01bubble;
 
 import org.mindidea.algo.sort.zcommon.Utils;
 
-public class Demo6 {
+public class Demo06 {
     public static void main(String[] args) {
-        Integer[] nums = Utils.generateArr(100, 20);
+        Integer[] nums = Utils.generateArr(10, 20);
         sort(nums);
         Utils.printArr(nums);
     }
@@ -22,4 +22,3 @@ public class Demo6 {
         }
     }
 }
-

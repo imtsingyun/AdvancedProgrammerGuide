@@ -9,7 +9,7 @@ import org.mindidea.algo.sort.zcommon.Utils;
  * 3. 然后再从 index=1 开始，和 index=0 比较，以此类推
  */
 @SuppressWarnings("DuplicatedCode")
-public class Demo1 {
+public class Demo01 {
 	public static void main(String[] args) {
 		Integer[] arr = Utils.generateArr(10, 30);
 		Utils.printArr(arr);
