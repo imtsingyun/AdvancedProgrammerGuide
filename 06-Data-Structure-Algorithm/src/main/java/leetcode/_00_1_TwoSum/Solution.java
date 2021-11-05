@@ -1,13 +1,12 @@
 package leetcode._00_1_TwoSum;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class Solution {
 
 	public static void main(String[] args) {
 		int[] nums = new int[]{2,7,11,15};
-		System.out.println(twoSum(nums, 9));
+		System.out.println(Arrays.toString(twoSum(nums, 9)));
 	}
 
 	public static int[] twoSum(int[] nums, int target) {
