@@ -6,18 +6,8 @@ public class Demo02 {
 
 	public static void main(String[] args) {
 		Integer[] nums = Utils.generateArr(100, 12);
-		buildHeap(nums, nums.length);
-		Utils.printArr(nums);
-
 	}
 
-	public static void sort(Integer[] nums) {
-		buildHeap(nums, nums.length);
-		for (int i = nums.length - 1; i >= 0; i--) {
-			Utils.swap(nums, i, 0);
-			heapify(nums, i, 0);
-		}
-	}
 	public static void buildHeap(Integer[] nums, int n) {
 		// 获取最后一个有子元素的节点，即最后一个节点的父节点
 		int lastNode = nums.length - 1;
