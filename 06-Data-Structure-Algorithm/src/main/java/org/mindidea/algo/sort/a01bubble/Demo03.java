@@ -1,20 +1,18 @@
 package org.mindidea.algo.sort.a01bubble;
 
-import org.mindidea.algo.sort.zcommon.Utils;
-
 /**
+ * Bubble sort
  * @author tsingyun
+ * 2021-11-10 下午10:17
  */
-public class Demo04 {
+public class Demo03 {
 	public static void main(String[] args) {
-		Integer[] nums = Utils.generateArr(10, 25);
-		sort(nums);
-		Utils.printArr(nums);
+
 	}
 
 	@SuppressWarnings("DuplicatedCode")
 	public static void sort(Integer[] nums) {
-		for (int end = nums.length - 1; end > 0; end--) {
+		for (int end = nums.length - 1; end >0; end--) {
 			int lastChangeIndex = 0;
 			for (int begin = 1; begin <= end; begin++) {
 				if (nums[begin - 1] > nums[begin]) {
@@ -26,9 +24,9 @@ public class Demo04 {
 		}
 	}
 
-	public static void swap(Integer[] nums, int index1, int index2) {
-		int tmp = nums[index1];
-		nums[index1] = nums[index2];
-		nums[index2] = tmp;
+	public static void swap(Integer[] nums, int i1, int i2) {
+		int tmp = nums[i1];
+		nums[i1] = nums[i2];
+		nums[i2] = tmp;
 	}
 }

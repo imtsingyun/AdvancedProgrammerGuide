@@ -44,4 +44,18 @@ public class Demo01 {
 			arr[end] = tmp;
 		}
 	}
+	
+	public static void sort3(Integer[] nums) {
+		for (int end = nums.length - 1; end > 0; end--) {
+			int maxValueIndex = 0;
+			for (int begin = 1; begin <= nums.length - 1; begin++) {
+				if (nums[begin] >= nums[maxValueIndex]) {
+					maxValueIndex = begin;
+				}
+			}
+			int tmp = nums[maxValueIndex];
+			nums[maxValueIndex] = nums[end];
+			nums[end] = tmp;
+		}
+	}
 }
