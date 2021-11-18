@@ -8,4 +8,18 @@ package org.mindidea.algo.sort.a05recursion;
  * 3. 将 n-1 个盘子从 B 移到 C
  */
 public class Demo04Hanoi {
+	public static void main(String[] args) {
+
+	}
+
+	/**
+	 * 将 n 个盘子从 p1 挪到  p3, p2 作为中间柱
+	 * @param n  盘子个数
+	 * @param p1 起点
+	 * @param p2 中间柱
+	 * @param p3 终点
+	 */
+	private void hanoi(int n, String p1, String p2, String p3) {
+
+	}
 }
