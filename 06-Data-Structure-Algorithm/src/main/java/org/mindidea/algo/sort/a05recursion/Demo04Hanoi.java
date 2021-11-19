@@ -9,17 +9,28 @@ package org.mindidea.algo.sort.a05recursion;
  */
 public class Demo04Hanoi {
 	public static void main(String[] args) {
-
+		new Demo04Hanoi().hanoi(2, "A", "B", "C");
 	}
 
 	/**
 	 * 将 n 个盘子从 p1 挪到  p3, p2 作为中间柱
+	 *
 	 * @param n  盘子个数
 	 * @param p1 起点
 	 * @param p2 中间柱
 	 * @param p3 终点
 	 */
 	private void hanoi(int n, String p1, String p2, String p3) {
+		if (n == 1) {
+			move(1, p1, p3);
+			return;
+		}
+		hanoi(n - 1, p1, p3, p2);
+		move(n, p1, p3);
+		hanoi(n - 1, p2, p1, p3);
+	}
 
+	private void move(int n, String from, String to) {
+		System.out.println("将" + n + "号盘子从" + from + "号柱子移到" + to + "柱子");
 	}
 }
