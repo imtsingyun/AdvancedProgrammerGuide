@@ -31,7 +31,6 @@ public class Demo02Queens {
 	void place(int row) {
 		if (row == cols.length) {
 			ways++;
-			show();
 			// 此处 row 是 n + 1 行，不存在该行，return 后又回到最后一行
 			return;
 		}
@@ -50,8 +49,5 @@ public class Demo02Queens {
 			leftTop[ltIndex] = false;
 			rightTop[rtIndex] = false;
 		}
-	}
-
-	void show() {
 	}
 }
