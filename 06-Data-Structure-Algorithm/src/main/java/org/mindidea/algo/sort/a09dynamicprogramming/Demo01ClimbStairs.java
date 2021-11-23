@@ -18,10 +18,10 @@ public class Demo01ClimbStairs {
 		System.out.println(climb(7));
 	}
 
+	@SuppressWarnings("DuplicatedCode")
 	private static int climb(int n) {
 		if (n < 0) return -1;
-		if (n == 1) return 1;
-		if (n == 2) return 2;
+		if (n <= 2) return n;
 
 		int s1 = 1;
 		int s2 = 2;
