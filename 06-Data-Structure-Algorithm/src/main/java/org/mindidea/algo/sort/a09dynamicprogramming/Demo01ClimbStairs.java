@@ -8,7 +8,7 @@ package org.mindidea.algo.sort.a09dynamicprogramming;
  * 2. 如果第一步走两个台阶，则有 dp(n - 2) 种走法
  * 所以 dp(n) = dp(n - 1) + dp(n - 2)
  */
-public class Demo02ClimbStairs {
+public class Demo01ClimbStairs {
 	public static void main(String[] args) {
 		System.out.println(climb(2));
 		System.out.println(climb(3));

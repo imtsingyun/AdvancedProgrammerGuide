@@ -10,7 +10,7 @@ package org.mindidea.algo.sort.a09dynamicprogramming;
  * 如果第 1 次选择了 1 分，则 dp(n) = dp(n - 1) + 1
  * 所以 dp(n) = MIN { dp(n-25), dp(n-20), dp(n-5), dp(n-1) } + 1
  */
-public class Demo01CoinChange {
+public class Demo02CoinChange {
 	public static void main(String[] args) {
 		System.out.println(coins1(41));
 		System.out.println(coins2(41));
