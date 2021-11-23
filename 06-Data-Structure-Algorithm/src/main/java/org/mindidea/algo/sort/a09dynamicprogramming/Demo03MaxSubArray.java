@@ -21,10 +21,28 @@ package org.mindidea.algo.sort.a09dynamicprogramming;
 public class Demo03MaxSubArray {
 	public static void main(String[] args) {
 		int[] nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
-		System.out.println(solution(nums));
+		System.out.println(solution1(nums));
+		System.out.println(solution2(nums));
 	}
 
-	private static int solution(int[] nums) {
+	private static int solution2(int[] nums) {
+		if (nums == null || nums.length == 0) {
+			return 0;
+		}
+		int dp = nums[0];
+		int max = dp;
+		for (int i = 1; i < nums.length; i++) {
+			if (dp <= 0) {
+				dp = nums[i];
+			} else {
+				dp = dp + nums[i];
+			}
+			System.out.println("dp[" + i + "] = " + dp);
+		}
+		return max;
+	}
+
+	private static int solution1(int[] nums) {
 		if (nums == null || nums.length == 0) {
 			return 0;
 		}
