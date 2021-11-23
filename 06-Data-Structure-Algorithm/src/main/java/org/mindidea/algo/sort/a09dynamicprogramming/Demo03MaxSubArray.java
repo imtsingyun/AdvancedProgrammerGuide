@@ -25,6 +25,7 @@ public class Demo03MaxSubArray {
 		System.out.println(solution2(nums));
 	}
 
+	// 去掉数组，优化空间
 	private static int solution2(int[] nums) {
 		if (nums == null || nums.length == 0) {
 			return 0;
