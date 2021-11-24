@@ -38,6 +38,7 @@ public class Demo03MaxSubArray {
 			} else {
 				dp = dp + nums[i];
 			}
+			max = Math.max(dp, max);
 			System.out.println("dp[" + i + "] = " + dp);
 		}
 		return max;
