@@ -5,7 +5,7 @@ package org.mindidea.algo.sort.a09dynamicprogramming;
  * 求两个序列的最长公共子序列
  * 比如 [1, 3, 5, 9, 10], [1, 4, 9, 10] 的最长公共子序列是 1, 9, 10
  */
-public class Demo06LongestCommSubSeq {
+public class Demo05LongestCommSubSeq {
 	public static void main(String[] args) {
 		int[] nums1 = {1, 3, 5, 9, 10};
 		int[] nums2 = {1, 4, 9, 10};
