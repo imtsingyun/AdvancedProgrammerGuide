@@ -29,9 +29,7 @@ public class Demo02CompletableFuture {
 				e.printStackTrace();
 			}
 			return 1;
-		}, pool).thenApply(f -> {
-			return f + 2;
-		}).thenApply(f -> {
+		}, pool).thenApply(f -> f + 2).thenApply(f -> {
 			return f + 3;
 		}).whenComplete((v, e) -> {
 			if (e == null) {
