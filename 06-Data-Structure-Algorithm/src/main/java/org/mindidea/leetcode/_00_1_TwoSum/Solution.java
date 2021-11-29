@@ -1,4 +1,4 @@
-package leetcode._00_1_TwoSum;
+package org.mindidea.leetcode._00_1_TwoSum;
 
 import java.util.*;
 

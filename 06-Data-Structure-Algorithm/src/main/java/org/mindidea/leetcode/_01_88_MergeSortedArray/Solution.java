@@ -1,4 +1,4 @@
-package leetcode._01_88_MergeSortedArray;
+package org.mindidea.leetcode._01_88_MergeSortedArray;
 
 /**
  * 合并两个有序数组

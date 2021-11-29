@@ -1,6 +1,6 @@
 package org.mindidea.algo.a02selection;
 
-import org.mindidea.algo.sort.zcommon.Utils;
+import org.mindidea.algo.zcommon.Utils;
 
 /**
  * 选择排序

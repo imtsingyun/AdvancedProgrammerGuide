@@ -1,4 +1,4 @@
-package leetcode._03_367_PerfectSquare;
+package org.mindidea.leetcode._03_367_PerfectSquare;
 
 /**
  * 有效的完全平方数

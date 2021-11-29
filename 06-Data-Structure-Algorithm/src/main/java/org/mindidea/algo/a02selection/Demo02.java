@@ -1,6 +1,6 @@
 package org.mindidea.algo.a02selection;
 
-import org.mindidea.algo.sort.zcommon.Utils;
+import org.mindidea.algo.zcommon.Utils;
 
 public class Demo02 {
     public static void main(String[] args) {

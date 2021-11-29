@@ -1,4 +1,4 @@
-package leetcode._04_51_NQueens;
+package org.mindidea.leetcode._04_51_NQueens;
 
 import java.util.ArrayList;
 import java.util.List;

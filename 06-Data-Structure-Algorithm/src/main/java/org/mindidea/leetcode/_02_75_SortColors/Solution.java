@@ -1,4 +1,4 @@
-package leetcode._02_75_SortColors;
+package org.mindidea.leetcode._02_75_SortColors;
 
 public class Solution {
 	public static void main(String[] args) {

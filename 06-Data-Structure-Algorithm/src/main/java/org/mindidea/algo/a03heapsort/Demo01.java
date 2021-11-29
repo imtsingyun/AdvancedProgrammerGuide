@@ -1,6 +1,6 @@
 package org.mindidea.algo.a03heapsort;
 
-import org.mindidea.algo.sort.zcommon.Utils;
+import org.mindidea.algo.zcommon.Utils;
 
 public class Demo01 {
     public static void main(String[] args) {

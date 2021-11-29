@@ -1,6 +1,6 @@
 package org.mindidea.algo.a01bubble;
 
-import org.mindidea.algo.sort.zcommon.Utils;
+import org.mindidea.algo.zcommon.Utils;
 
 /**
  * @author tsingyun
