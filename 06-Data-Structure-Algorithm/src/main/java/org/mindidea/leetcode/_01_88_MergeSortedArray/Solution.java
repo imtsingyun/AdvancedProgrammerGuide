@@ -13,8 +13,30 @@ public class Solution {
 	public static void main(String[] args) {
 		Integer[] nums1 = new Integer[]{1, 2, 3, 0, 0, 0};
 		Integer[] nums2 = new Integer[]{2, 5, 6};
-		merge2(nums1, 3, nums2, 3);
+		merge0(nums1, 3, nums2, 3);
 		Utils.printArr(nums1);
+	}
+
+	/**
+	 * @param nums1 第一个数组
+	 * @param m     第一个数组中的非零元素个数
+	 * @param nums2 每二个数组
+	 * @param n     第二个数组中元素的个数
+	 * @author tsingyun
+	 * @time 2021-11-30 10:54
+	 */
+	private static void merge0(Integer[] nums1, int m, Integer[] nums2, int n) {
+		int p0 = nums1.length - 1;    // 指向 nums1 数组的最后一个元素
+		int p1 = m - 1;                // 指向 nums1 数组的最后一个非零元素
+		int p2 = nums2.length - 1;    // 指向 nums2 数组的最后一个元素
+
+		while (p2 >= 0) {
+			if (p1 >= 0 && nums1[p1] < nums2[p2]) {
+				nums1[p0--] = nums2[p2--];
+			} else {
+				nums1[p0--] = nums1[p1--];
+			}
+		}
 	}
 
 	/**
