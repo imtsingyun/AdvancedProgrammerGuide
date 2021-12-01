@@ -3,10 +3,10 @@ package org.mindidea.leetcode._04_51_NQueens;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Solution {
+public class Solution1 {
 
 	public static void main(String[] args) {
-		List<List<String>> lists = new Solution().solveNQueens(4);
+		List<List<String>> lists = new Solution1().solveNQueens(4);
 		System.out.println(lists);
 	}
 
@@ -46,10 +46,10 @@ public class Solution {
 
 	private void show(List<List<String>> result) {
 		List<String> list = new ArrayList<>(cols.length);
-		for (int row = 0; row < cols.length; row++) {
+		for (int i : cols) {
 			StringBuilder sb = new StringBuilder();
 			for (int col = 0; col < cols.length; col++) {
-				if (cols[row] == col) {
+				if (i == col) {
 					sb.append("Q");
 				} else {
 					sb.append(".");
