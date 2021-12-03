@@ -6,7 +6,7 @@ import java.util.stream.Stream;
 
 public class Demo01CreateStream {
 	public static void main(String[] args) {
-		m1();
+		m3();
 	}
 
 	/**
@@ -27,10 +27,15 @@ public class Demo01CreateStream {
 	}
 
 	/**
-	 *
+	 * 使用 Stream builder 创建 stream
 	 */
 	private static void m2() {
 		Stream<Object> stream1 = Stream.builder().add(2).add(3).add(5).add(8).build();
 		Stream<String> stream2 = Stream.<String>builder().add("a").add("b").add("c").build();
+	}
+
+	private static void m3() {
+		Stream<Object> empty = Stream.empty();
+		System.out.println(empty);
 	}
 }
