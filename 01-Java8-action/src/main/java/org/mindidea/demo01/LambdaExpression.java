@@ -55,8 +55,27 @@ public class LambdaExpression {
 		System.out.println("==============================");
 		String s = functionTest1(appleList.get(0), Apple::toString);
 		System.out.println(s);
+
+		/*
+		 * BiFunction 用法
+		 */
+		System.out.println("==============================");
+		Apple apple = functionTest2("Blue", 1209d, Apple::new);
+		System.out.println(apple);
+		/*
+		 * Supplier 用法
+		 */
+		System.out.println("==============================");
+		Apple apple1 = supplierTest(() -> new Apple("Gold", 2000d));
+		System.out.println(apple1);
 	}
 
+	private static Apple supplierTest(Supplier<Apple> supplier) {
+		return supplier.get();
+	}
+	private static Apple functionTest2(String color, Double weight, BiFunction<String, Double, Apple> function) {
+		return function.apply(color, weight);
+	}
 	private static String functionTest1(Apple apple, Function<Apple, String> function) {
 		return function.apply(apple);
 	}
