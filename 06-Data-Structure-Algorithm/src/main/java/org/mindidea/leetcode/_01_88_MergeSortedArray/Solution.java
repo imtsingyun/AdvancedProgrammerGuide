@@ -48,7 +48,7 @@ public class Solution {
 	 * @param nums2 数组 2
 	 * @param n     数组 2 中元素的个数
 	 */
-	public static void merge1(Integer[] nums1, int m, Integer[] nums2, int n) {
+	private static void merge1(Integer[] nums1, int m, Integer[] nums2, int n) {
 		// 指向 nums1 数组的最后一个元素
 		int p0 = nums1.length - 1;
 		// 指向 nums1 数组的最后一个非零元素
@@ -72,6 +72,20 @@ public class Solution {
 
 		while (p2 >= 0) {
 			if (p1 >= 0 && nums1[p1] > nums2[p2]) {
+				nums1[p0--] = nums1[p1--];
+			} else {
+				nums1[p0--] = nums2[p2--];
+			}
+		}
+	}
+
+	private static void merge3(Integer[] nums1, int m, Integer[] nums2, int n) {
+		int p0 = nums1.length - 1;
+		int p1 = m - 1;
+		int p2 = nums2.length - 1;
+
+		while (p2 >= 0) {
+			if (p1 >=0 && nums1[p1] > nums2[p2]) {
 				nums1[p0--] = nums1[p1--];
 			} else {
 				nums1[p0--] = nums2[p2--];
