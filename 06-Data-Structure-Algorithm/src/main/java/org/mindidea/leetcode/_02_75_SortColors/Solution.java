@@ -14,7 +14,7 @@ public class Solution {
 	public static void main(String[] args) {
 		Solution s1 = new Solution();
 		Integer[] nums = new Integer[]{2, 0, 2, 1, 1, 0};
-		s1.sortColors2(nums);
+		s1.sortColors3(nums);
 		Utils.printArr(nums);
 	}
 
@@ -23,6 +23,23 @@ public class Solution {
 	 *
 	 * @param nums 数组
 	 */
+	private void sortColors3(Integer[] nums) {
+		int left = 0;
+		int right = nums.length - 1;
+		int p = 0;
+
+		while (p <= right) {
+			Integer num = nums[p];
+			if (num == 0) {
+				swap(nums, p++, left++);
+			} else if (num == 1) {
+				p++;
+			} else {
+				swap(nums, p, right--);
+			}
+		}
+	}
+
 	private void sortColors2(Integer[] nums) {
 		int left = 0;                // 指向头元素
 		int right = nums.length - 1;    // 指向尾元素
