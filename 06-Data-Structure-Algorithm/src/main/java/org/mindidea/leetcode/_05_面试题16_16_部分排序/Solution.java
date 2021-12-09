@@ -17,9 +17,40 @@ import org.mindidea.algo.zcommon.Utils;
 public class Solution {
 	public static void main(String[] args) {
 		Integer[] arr = new Integer[]{1, 5, 4, 3, 2, 6, 7};
-		Utils.printArr(subSort(arr));
+		Utils.printArr(subSort1(arr));
 	}
 
+	public static Integer[] subSort1(Integer[] array) {
+		if (array == null || array.length == 0) {
+			return new Integer[]{-1, -1};
+		}
+		int max = array[0];
+		int r = -1;
+		for (int i = 1; i < array.length; i++) {
+			Integer v = array[i];
+			if (v > max) {
+				max = v;
+			} else {
+				r = i;
+			}
+		}
+
+		if (r == -1) {
+			return new Integer[]{-1, -1};
+		}
+
+		int min = array[array.length - 1];
+		int l = -1;
+		for (int i = array.length - 1; i>=0; i--) {
+			Integer v = array[i];
+			if (v < min) {
+				min = v;
+			} else {
+				l = i;
+			}
+		}
+		return new Integer[]{l, r};
+	}
 	/**
 	 * 返回排序部分的数据的开头索引和结尾索引
 	 *
