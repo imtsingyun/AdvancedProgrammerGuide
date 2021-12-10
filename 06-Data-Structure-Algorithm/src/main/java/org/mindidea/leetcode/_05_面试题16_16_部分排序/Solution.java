@@ -16,7 +16,30 @@ import org.mindidea.algo.zcommon.Utils;
 public class Solution {
 	public static void main(String[] args) {
 		Integer[] arr = new Integer[]{1, 5, 4, 3, 2, 6, 7};
-		Utils.printArr(subSort1(arr));
+		Utils.printArr(subSort2(arr));
+	}
+
+	public static Integer[] subSort2(Integer[] nums) {
+		int max = nums[0];
+		int r = -1;
+		for (int i = 1; i < nums.length; i++) {
+			if (nums[i] > max) {
+				max = nums[i];
+			} else {
+				r = i;
+			}
+		}
+
+		int min = nums[nums.length - 1];
+		int l = -1;
+		for (int i = nums.length - 2; i >= 0; i--) {
+			if (nums[i] < min) {
+				min = nums[i];
+			} else {
+				l = i;
+			}
+		}
+		return new Integer[]{l, r};
 	}
 
 	public static Integer[] subSort1(Integer[] array) {
@@ -40,7 +63,7 @@ public class Solution {
 
 		int min = array[array.length - 1];
 		int l = -1;
-		for (int i = array.length - 1; i>=0; i--) {
+		for (int i = array.length - 1; i >= 0; i--) {
 			Integer v = array[i];
 			if (v < min) {
 				min = v;
@@ -50,6 +73,7 @@ public class Solution {
 		}
 		return new Integer[]{l, r};
 	}
+
 	/**
 	 * 返回排序部分的数据的开头索引和结尾索引
 	 *

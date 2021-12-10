@@ -55,6 +55,20 @@ public class Solution {
 		}
 	}
 
+	private void sortColors5(Integer[] nums) {
+		int left = 0;
+		int right = nums.length - 1;
+		int p = 0;
+		while (p <= right) {
+			if (nums[p] == 0) {
+				swap(nums, left++, p++);
+			} else if (nums[p] == 1) {
+				p++;
+			} else {
+				swap(nums, right--, p);
+			}
+		}
+	}
 	private void sortColors2(Integer[] nums) {
 		int left = 0;                // 指向头元素
 		int right = nums.length - 1;    // 指向尾元素
