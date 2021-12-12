@@ -24,7 +24,34 @@ public class BinaryHeap<E> implements Heap<E> {
 	}
 
 	public BinaryHeap() {
-		this(null);
+		this((Comparator<E>) null);
+	}
+
+	@SuppressWarnings("unchecked")
+	public BinaryHeap(E[] elements, Comparator<E> comparator) {
+		if (elements == null || elements.length == 0) {
+			this.elements = (E[]) new Object[DEFAULT_CAPACITY];
+		} else {
+			int capacity = Math.max(elements.length, DEFAULT_CAPACITY);
+			size = elements.length;
+			this.elements = (E[]) new Object[capacity];
+			System.arraycopy(elements, 0, this.elements, 0, elements.length);
+			// 批量建堆
+			heapify();
+		}
+	}
+
+	public BinaryHeap(E[] elements) {
+		this(elements, null);
+	}
+
+	private void heapify() {
+		// 从最后一个非叶子节点开始身上遍历
+		// 最后一个非叶子节点即：最后一个节点的父节点
+		int parentIndex = (size - 1 - 1) >> 1;
+		for (int i = parentIndex; i >= 0; i--) {
+			shiftDown(i);
+		}
 	}
 
 	@Override
@@ -78,6 +105,51 @@ public class BinaryHeap<E> implements Heap<E> {
 		elements[index] = e;
 	}
 
+	/**
+	 * 对第 index 个元素进行下滤操作
+	 *
+	 * @param index 需要下滤的元素
+	 */
+	@SuppressWarnings("SameParameterValue")
+	private void shiftDown(int index) {
+		E element = elements[index];
+		// 左子节点 < size 表示 index 存在子节点（至少存在一个左子节点）
+		while (((index << 1) + 1) < size) {
+			// 1. 只有左节点
+			// 2. 有左右两个子节点
+			// 默认取左子节点
+			int childIndex = (index << 1) + 1;
+			E child = elements[childIndex];
+
+			int rightIndex = childIndex + 1;
+			E rightChild = elements[rightIndex];
+
+			if (rightIndex < size && compare(rightChild, child) > 0) {
+				childIndex = rightIndex;
+				child = rightChild;
+			}
+			if (compare(element, child) >= 0) {
+				break;
+			}
+			elements[index] = child;
+			index = childIndex;
+		}
+		elements[index] = element;
+	}
+
+	@Override
+	public E remove() {
+		emptyCheck();
+		E oldElement = elements[0];
+		// 最后一个元素覆盖第一个元素，然后删除最后一个元素
+		elements[0] = elements[size - 1];
+		elements[size - 1] = null;
+		size--;
+		// 对第一个元素进行下滤操作
+		shiftDown(0);
+		return oldElement;
+	}
+
 	@Override
 	public E get() {
 		emptyCheck();
@@ -91,15 +163,19 @@ public class BinaryHeap<E> implements Heap<E> {
 		}
 		return elements[i];
 	}
-	@Override
-	public E remove() {
-		emptyCheck();
-		return null;
-	}
 
 	@Override
 	public E replace(E element) {
-		return null;
+		checkNull(element);
+		if (size == 0) {
+			elements[0] = element;
+			size++;
+			return null;
+		}
+		E oldElement = elements[0];
+		elements[0] = element;
+		shiftDown(0);
+		return oldElement;
 	}
 
 	@SuppressWarnings("unchecked")
