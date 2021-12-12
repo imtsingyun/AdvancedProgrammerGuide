@@ -1,51 +1,56 @@
 package org.mindidea.algo.a01sort.a03heapsort;
 
-import org.mindidea.algo.zcommon.Utils;
-
 public class Demo02 {
 
 	public static void main(String[] args) {
-		Integer[] nums = Utils.generateArr(100, 12);
+		int[] tree = new int[]{88, 44, 53, 41, 16, 6, 70, 18, 85, 98, 81, 23, 35, 43, 37};
+		new Demo02().buildHeap(tree, tree.length);
+		for (int j : tree) {
+			System.out.println(j);
+		}
 	}
 
-	public static void buildHeap(Integer[] nums, int n) {
-		// 获取最后一个有子元素的节点，即最后一个节点的父节点
-		int lastNode = nums.length - 1;
-		int lastNodeParent = (lastNode - 1) / 2;
-
-		for (int i = lastNodeParent; i >= 0; i--) {
-			heapify(nums, n, i);
+	public void buildHeap(int[] tree, int n) {
+		// 从倒数第二行开始做 heapify
+		// 即最后一个元素的父节点
+		int lastNode = n - 1;
+		int parent = (lastNode - 1) >> 1;
+		for (int i = parent; i >= 0; i--) {
+			heapify(tree, n, i);
 		}
 	}
 
 	/**
-	 * heapify 操作，比较第 i 个元素和它的两个子元素，找到最大的并和根元素交换
+	 * heapify 操作
 	 *
-	 * @param nums 数组
-	 * @param n    堆中第 n 个元素
-	 * @param i    对第 i 个元素进行 heapify
+	 * @param tree 使用数组表示堆
+	 * @param n    节点数
+	 * @param i    对第 i 个节点进行 heapify 操作
 	 */
-	@SuppressWarnings("DuplicatedCode")
-	public static void heapify(Integer[] nums, int n, int i) {
-		// i 节点的左右两个子节点
-		int c1 = i * 2 + 1;
-		int c2 = i * 2 + 2;
-		// 记录最大节点，默认是 i 节点
-		int max = i;
+	public void heapify(int[] tree, int n, int i) {
+		if (i >= n) {
+			return;
+		}
+		int c1 = (i << 1) + 1;    // 左子节点
+		int c2 = (i << 1) + 2;    // 右子节点
 
-		// c1、c2 如果大于 n，则表示 i 节点没有子节点
-		if (c1 < n && nums[c1] > nums[max]) {
+		// 从第 i、c1、c2 三个节点中找到最大值
+		int max = i;
+		if (c1 < n && tree[c1] > tree[max]) {
 			max = c1;
 		}
-		if (c2 < n && nums[c2] > nums[max]) {
+		if (c2 < n && tree[c2] > tree[max]) {
 			max = c2;
 		}
-
-		// 如果最大值不是 父节点，则交换位置
 		if (max != i) {
-			Utils.swap(nums, i, max);
-			// max 是被换下来的元素，需要继续 heapify
-			heapify(nums, n, max);
+			swap(tree, max, i);
+			heapify(tree, n, max);
 		}
+	}
+
+	public static void swap(int[] nums, int i, int j) {
+		int temp = nums[i];
+		nums[i] = nums[j];
+		nums[j] = temp;
 	}
 }
