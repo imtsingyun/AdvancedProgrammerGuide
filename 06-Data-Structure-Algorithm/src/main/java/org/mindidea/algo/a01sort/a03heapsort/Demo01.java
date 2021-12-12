@@ -1,66 +1,67 @@
 package org.mindidea.algo.a01sort.a03heapsort;
 
-import org.mindidea.algo.zcommon.Utils;
-
 public class Demo01 {
-    public static void main(String[] args) {
-//        Integer[] nums = Utils.generateArr(100, 8);
-        Integer[] nums = new Integer[]{83, 58, 54, 8, 64, 32, 89, 72};
-        buildHeap(nums, nums.length);
-        Utils.printArr(nums);
-        sort(nums, nums.length);
-        Utils.printArr(nums);
-    }
 
-    public static void buildHeap(Integer[] arr, int n) {
-        // 最后一个节点的父节点就是最后一个非叶子节点
-        int lastEle = arr.length - 1;
-        int parent = (lastEle - 1) / 2;
+	private static int heapSize;
+	public static void main(String[] args) {
+		int[] nums = new int[]{83, 58, 54, 8, 64, 32, 89, 72};
+		sort(nums);
+		for (int i = 0; i < nums.length; i++) {
+			System.out.println(nums[i]);
+		}
+	}
 
-        for (int i = parent; i >= 0; i--) {
-            heapify(arr, n, i);
-        }
-    }
+	private static void sort(int[] nums) {
+		heapSize = nums.length;
+		heapify(nums);
+		while (heapSize > 1) {
+			int temp = nums[0];
+			--heapSize;
+			nums[0] = nums[heapSize];
+			nums[heapSize] = temp;
+			shiftDown(nums, heapSize, 0);
+		}
+	}
 
-    /**
-     * heapify
-     *
-     * @param arr 操作的数组
-     * @param n   堆中元素的个数
-     * @param i   对第 i 个元素进行 heapify 操作
-     */
-    @SuppressWarnings("DuplicatedCode")
-    public static void heapify(Integer[] arr, int n, int i) {
-        if (i >= n) {
-            return;
-        }
-        // 找出 i 节点以及其子节点中最大的节点
-        // i 节点的 左子节浿点
-        int c1 = 2 * i + 1;
-        // i 节点的 右子节点
-        int c2 = 2 * i + 2;
-        int max = i;
-        // 从 i、c1、c2 中找到最大的元素
-        if (c1 < n && arr[c1] > arr[max]) {
-            max = c1;
-        }
-        if (c2 < n && arr[c2] > arr[max]) {
-            max = c2;
-        }
+	/**
+	 * 对第 i 个节点进行 heapify 操作
+	 *
+	 * @param tree 使用数据表示堆数据
+	 */
+	private static void heapify(int[] tree) {
+		int lastIndex = (tree.length - 1 - 1) >> 1;
+		for (int j = lastIndex; j >=0 ; j--) {
+			shiftDown(tree, tree.length, j);
+		}
+	}
 
-        // 最大值不是父节点，则交换
-        if (max != i) {
-            Utils.swap(arr, max, i);
-            // 交换完成后，继续交换
-            heapify(arr, n, max);
-        }
-    }
+	/**
+	 * 下滤
+	 *
+	 * @param tree 堆数据
+	 * @param i    需要下滤的数据索引
+	 */
+	private static void shiftDown(int[] tree, int n, int i) {
+		int target = tree[i];
+		// i 的左子节点
+		while ((i << 1) + 1 < n) {
+			// 1 可能只有一个左节点
+			// 2 可能只左右两个子节点
+			int childIndex = (i << 1) + 1;
+			int child = tree[childIndex];
 
-    public static void sort(Integer[] arr, int n) {
-        buildHeap(arr, n);
-        for (int j = n - 1; j >= 0; j--) {
-            Utils.swap(arr, j, 0);
-            heapify(arr, j, 0);
-        }
-    }
+			// 右子节点
+			int rightIndex = childIndex + 1;
+			if (rightIndex < n && tree[rightIndex] > child) {
+				childIndex = rightIndex;
+			}
+
+			if (target > tree[childIndex]) {
+				break;
+			}
+			tree[i] = tree[childIndex];
+			i = childIndex;
+		}
+		tree[i] = target;
+	}
 }

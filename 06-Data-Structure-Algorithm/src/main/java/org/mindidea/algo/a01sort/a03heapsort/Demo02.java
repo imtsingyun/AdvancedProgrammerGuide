@@ -4,9 +4,18 @@ public class Demo02 {
 
 	public static void main(String[] args) {
 		int[] tree = new int[]{88, 44, 53, 41, 16, 6, 70, 18, 85, 98, 81, 23, 35, 43, 37};
-		new Demo02().buildHeap(tree, tree.length);
+		new Demo02().sort(tree);
 		for (int j : tree) {
 			System.out.println(j);
+		}
+	}
+
+	public void sort(int[] nums) {
+		int heapSize = nums.length;
+		this.buildHeap(nums, heapSize);
+		while (heapSize > 1) {
+			swap(nums, 0, --heapSize);
+			heapify(nums, heapSize, 0);
 		}
 	}
 
