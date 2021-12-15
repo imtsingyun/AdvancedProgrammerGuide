@@ -23,6 +23,41 @@ public class Demo03MaxSubArray {
 		int[] nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
 		System.out.println(solution1(nums));
 		System.out.println(solution2(nums));
+		System.out.println(solution3(nums));
+	}
+
+	private static int solution4(int[] nums) {
+		if (nums == null || nums.length == 0) {
+			return 0;
+		}
+		int dp = nums[0];
+		int max = dp;
+		for (int i = 1; i < nums.length; i++) {
+			if (dp <= 0) {
+				dp = nums[i];
+			} else {
+				dp = dp + nums[i];
+			}
+			max = Math.max(max, dp);
+		}
+		return max;
+	}
+
+	private static int solution3(int[] nums) {
+		if (nums == null || nums.length == 0) {
+			return 0;
+		}
+		int dp = nums[0];
+		int max = dp;
+		for (int i = 1; i < nums.length; i++) {
+			if (dp <= 0) {
+				dp = nums[i];
+			} else {
+				dp = dp + nums[i];
+			}
+			max = Math.max(dp, max);
+		}
+		return max;
 	}
 
 	// 去掉数组，优化空间
