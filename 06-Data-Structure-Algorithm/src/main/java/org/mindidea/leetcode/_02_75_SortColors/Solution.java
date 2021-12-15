@@ -108,6 +108,21 @@ public class Solution {
 		}
 	}
 
+	public void sortColors6(Integer[] nums) {
+		int i = 0;
+		int l = 0;
+		int r = nums.length - 1;
+		while (i <= r) {
+			if (nums[i] == 0) {
+				swap(nums, i++, l++);
+			} else if (nums[i] == 1) {
+				i++;
+			} else {
+				swap(nums, i, r--);
+			}
+		}
+	}
+
 	private void swap(Integer[] nums, int i, int j) {
 		int tmp = nums[i];
 		nums[i] = nums[j];
