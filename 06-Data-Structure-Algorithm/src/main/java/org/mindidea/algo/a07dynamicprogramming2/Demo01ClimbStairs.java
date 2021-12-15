@@ -21,4 +21,17 @@ public class Demo01ClimbStairs {
 		}
 		return second;
 	}
+
+	private static int climb2(int n) {
+		if (n <= 2) {
+			return n;
+		}
+		int first = 1;
+		int second = 2;
+		for (int i = 3; i <= n; i++) {
+			second = first + second;
+			first = second - first;
+		}
+		return second;
+	}
 }
