@@ -21,11 +21,13 @@ package org.mindidea.algo.a06dynamicprogramming;
 public class Demo03MaxSubArray {
 	public static void main(String[] args) {
 		int[] nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
-//		System.out.println(solution1(nums));
-//		System.out.println(solution2(nums));
-//		System.out.println(solution3(nums));
+		System.out.println(solution1(nums));
+		System.out.println(solution2(nums));
+		System.out.println(solution3(nums));
+		System.out.println(solution4(nums));
 		System.out.println(solution5(nums));
 		System.out.println(solution6(nums));
+		System.out.println(solution7(nums));
 	}
 
 	private static int solution7(int[] nums) {

@@ -20,6 +20,25 @@ public class Demo04LongestIncrSubSeq {
 		int[] nums = {10, 2, 2, 5, 1, 7, 101, 18};
 		System.out.println(solution1(nums));
 		System.out.println(solution2(nums));
+		System.out.println(solution3(nums));
+	}
+
+	private static int solution3(int[] nums) {
+		if (nums == null || nums.length == 0) {
+			return 0;
+		}
+		int[] dp = new int[nums.length];
+		int max = 1;
+		for (int i = 0; i < dp.length; i++) {
+			dp[i] = 1;
+			for (int j = 0; j < i; j++) {
+				if (nums[i] > nums[j]) {
+					dp[i] = Math.max(dp[i], dp[j] + 1);
+				}
+			}
+			max = Math.max(dp[i], max);
+		}
+		return max;
 	}
 
 	private static int solution2(int[] nums) {
