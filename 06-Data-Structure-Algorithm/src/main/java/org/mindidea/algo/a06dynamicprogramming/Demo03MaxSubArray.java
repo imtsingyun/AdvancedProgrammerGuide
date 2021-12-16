@@ -27,6 +27,23 @@ public class Demo03MaxSubArray {
 		System.out.println(solution5(nums));
 	}
 
+	private static int solution6(int[] nums) {
+		if (nums == null || nums.length == 0) {
+			return 0;
+		}
+		int dp = nums[0];
+		int max = dp;
+		for (int i = 1; i < nums.length; i++) {
+			if (dp <= 0) {
+				dp = nums[i];
+			} else {
+				dp = dp + nums[i];
+			}
+			max = Math.max(max, dp);
+		}
+		return max;
+	}
+
 	private static int solution5(int[] nums) {
 		if (nums == null || nums.length == 0) {
 			return 0;
