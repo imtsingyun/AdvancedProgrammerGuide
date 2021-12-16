@@ -18,10 +18,29 @@ package org.mindidea.algo.a06dynamicprogramming;
 public class Demo04LongestIncrSubSeq {
 	public static void main(String[] args) {
 		int[] nums = {10, 2, 2, 5, 1, 7, 101, 18};
-		System.out.println(solution(nums));
+		System.out.println(solution1(nums));
+		System.out.println(solution2(nums));
 	}
 
-	private static int solution(int[] nums) {
+	private static int solution2(int[] nums) {
+		if (nums == null || nums.length == 0) {
+			return 0;
+		}
+		int[] dp = new int[nums.length];
+		int max = 1;
+		for (int i = 0; i < dp.length; i++) {
+			dp[i] = 1;
+			for (int j = 0; j < i; j++) {
+				if (nums[i] > nums[j]) {
+					dp[i] = Math.max(dp[i], dp[j] + 1);
+				}
+			}
+			max = Math.max(dp[i], max);
+		}
+		return max;
+	}
+
+	private static int solution1(int[] nums) {
 		if (nums == null || nums.length == 0) {
 			return 0;
 		}
@@ -30,6 +49,7 @@ public class Demo04LongestIncrSubSeq {
 		for (int i = 0; i < dp.length; i++) {
 			dp[i] = 1;
 			for (int j = 0; j < i; j++) {
+				// 遍历前面所有小于当前元素 nums[i] 的数据, 表示 i 元素可以拼接到 j 元素后面
 				if (nums[i] > nums[j]) {
 					dp[i] = Math.max(dp[i], dp[j] + 1);
 				}

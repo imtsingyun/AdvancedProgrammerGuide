@@ -25,6 +25,24 @@ public class Demo03MaxSubArray {
 //		System.out.println(solution2(nums));
 //		System.out.println(solution3(nums));
 		System.out.println(solution5(nums));
+		System.out.println(solution6(nums));
+	}
+
+	private static int solution7(int[] nums) {
+		if (nums == null || nums.length == 0) {
+			return 0;
+		}
+		int dp = nums[0];
+		int max = dp;
+		for (int i = 0; i < nums.length; i++) {
+			if (dp <= 0) {
+				dp = nums[i];
+			} else {
+				dp = dp + nums[i];
+			}
+			max = Math.max(dp, max);
+		}
+		return max;
 	}
 
 	private static int solution6(int[] nums) {
