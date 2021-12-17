@@ -35,8 +35,8 @@ public class Demo03MaxSubArray {
 		if (nums == null || nums.length == 0) {
 			return 0;
 		}
-		int dp = nums[0] = 1;
-		int max = 1;
+		int dp = nums[0];
+		int max = dp;
 		for (int i = 1; i < nums.length; i++) {
 			if (dp <= 0) {
 				dp = nums[i];
