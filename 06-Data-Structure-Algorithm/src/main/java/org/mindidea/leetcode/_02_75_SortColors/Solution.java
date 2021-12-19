@@ -14,7 +14,7 @@ public class Solution {
 	public static void main(String[] args) {
 		Solution s1 = new Solution();
 		Integer[] nums = new Integer[]{2, 0, 2, 1, 1, 0};
-		s1.sortColors4(nums);
+		s1.sortColors7(nums);
 		Utils.printArr(nums);
 	}
 
@@ -119,6 +119,22 @@ public class Solution {
 				i++;
 			} else {
 				swap(nums, i, r--);
+			}
+		}
+	}
+
+	public void sortColors7(Integer[] nums) {
+		int l = 0;
+		int r = nums.length - 1;
+		int p = 0;
+		while (p <= r) {
+			Integer v = nums[p];
+			if (v == 0) {
+				swap(nums, p++, l++);
+			} else if (v == 1) {
+				p++;
+			} else {
+				swap(nums, p++, r--);
 			}
 		}
 	}
