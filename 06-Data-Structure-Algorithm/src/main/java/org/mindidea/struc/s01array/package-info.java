@@ -1,0 +1,1 @@
+package org.mindidea.struc.s01array;
