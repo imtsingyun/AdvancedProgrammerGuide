@@ -14,11 +14,28 @@ package org.mindidea.leetcode._03_367_PerfectSquare;
 public class Solution {
 
 	public static void main(String[] args) {
-		boolean res = new Solution().isPerfectSquare(2147483647);
-		System.out.println(res);
+		System.out.println(new Solution().isPerfectSquare1(2147483647));
+		System.out.println(new Solution().isPerfectSquare2(18));
 	}
 
-	public boolean isPerfectSquare(int num) {
+	public boolean isPerfectSquare2(int num) {
+		int left = 0;
+		int right = num;
+		while (left <= right) {
+			int mid = ((right - left) >> 1) + left;
+			long square = (long)mid * mid;
+			if (square > num) {
+				right = mid - 1;
+			} else if (square < num) {
+				left = mid + 1;
+			} else {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	public boolean isPerfectSquare1(int num) {
 		int left = 0;
 		int right = num;
 		while (left <= right) {
@@ -36,4 +53,5 @@ public class Solution {
 		}
 		return false;
 	}
+
 }
