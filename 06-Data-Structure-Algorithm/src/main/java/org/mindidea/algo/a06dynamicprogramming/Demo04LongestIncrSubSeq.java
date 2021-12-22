@@ -13,7 +13,6 @@ package org.mindidea.algo.a06dynamicprogramming;
  * 以 nums[5] 7 结尾的最长上升子序列是 7, dp[5] = dp[3] + 1 = 3
  * 以 nums[6] 101 结尾的最长上升子序列是 101, dp[6] = dp[5] + 1 = 4
  * 以 nums[7] 181结尾的最长上升子序列是 18, dp[7] = dp[5] + 1 = 4
- *
  */
 public class Demo04LongestIncrSubSeq {
 	public static void main(String[] args) {
@@ -22,6 +21,44 @@ public class Demo04LongestIncrSubSeq {
 		System.out.println(solution2(nums));
 		System.out.println(solution3(nums));
 		System.out.println(solution4(nums));
+		System.out.println(solution5(nums));
+		System.out.println(solution6(nums));
+	}
+
+	private static int solution6(int[] nums) {
+		if (nums == null || nums.length == 0) {
+			return 0;
+		}
+		int[] dp = new int[nums.length];
+		int max = 1;
+		for (int i = 0; i < nums.length; i++) {
+			dp[i] = 1;
+			for (int j = 0; j < i; j++) {
+				if (nums[i] > nums[j]) {
+					dp[i] = Math.max(dp[i], dp[j] + 1);
+				}
+			}
+			max = Math.max(max, dp[i]);
+		}
+		return max;
+	}
+
+	private static int solution5(int[] nums) {
+		if (nums == null || nums.length == 0) {
+			return 0;
+		}
+		int[] dp = new int[nums.length];
+		int max = 1;
+		for (int i = 0; i < dp.length; i++) {
+			dp[i] = 1;
+			for (int j = 0; j < i; j++) {
+				if (nums[i] > nums[j]) {
+					dp[i] = Math.max(dp[i], dp[j] + 1);
+				}
+			}
+			max = Math.max(dp[i], max);
+		}
+		return max;
 	}
 
 	private static int solution4(int[] nums) {
