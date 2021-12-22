@@ -2,17 +2,17 @@ package org.mindidea.algo.a01sort.a03heapsort;
 
 public class Demo01 {
 
-	private static int heapSize;
 	public static void main(String[] args) {
-		int[] nums = new int[]{83, 58, 54, 8, 64, 32, 89, 72};
+//		int[] nums = new int[]{83, 58, 54, 8, 64, 32, 89, 72};
+		int[] nums = new int[]{88, 44, 53, 41, 16, 6, 70, 18, 85, 98, 81, 23, 35, 43, 37};
 		sort(nums);
-		for (int i = 0; i < nums.length; i++) {
-			System.out.println(nums[i]);
+		for (int num : nums) {
+			System.out.println(num);
 		}
 	}
 
 	private static void sort(int[] nums) {
-		heapSize = nums.length;
+		int heapSize = nums.length;
 		heapify(nums);
 		while (heapSize > 1) {
 			int temp = nums[0];
@@ -30,7 +30,7 @@ public class Demo01 {
 	 */
 	private static void heapify(int[] tree) {
 		int lastIndex = (tree.length - 1 - 1) >> 1;
-		for (int j = lastIndex; j >=0 ; j--) {
+		for (int j = lastIndex; j >= 0; j--) {
 			shiftDown(tree, tree.length, j);
 		}
 	}
