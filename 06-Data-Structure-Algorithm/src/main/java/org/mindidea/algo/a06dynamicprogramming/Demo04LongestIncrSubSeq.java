@@ -23,6 +23,22 @@ public class Demo04LongestIncrSubSeq {
 		System.out.println(solution4(nums));
 		System.out.println(solution5(nums));
 		System.out.println(solution6(nums));
+		System.out.println(solution7(nums));
+	}
+
+	private static int solution7(int[] nums) {
+		int[] dp = new int[nums.length];
+		int max = 1;
+		for (int i = 0; i < nums.length; i++) {
+			dp[i] = 1;
+			for (int j = 0; j < i; j++) {
+				if (nums[i] > nums[j]) {
+					dp[i] = Math.max(dp[i], dp[j] + 1);
+				}
+			}
+			max = Math.max(dp[i], max);
+		}
+		return max;
 	}
 
 	private static int solution6(int[] nums) {

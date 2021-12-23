@@ -14,7 +14,7 @@ package org.mindidea.algo.a06dynamicprogramming;
  * 以 nums[6], 1 结尾的最大连续子序列是 4、-1、2、1，所以 dp(6) = dp(5) + 1 = 6
  * 以 nums[7], -5 结尾的最大连续子序列是 4、-1、2、1、-5，所以 dp(7) = dp(6) + (-5) = 1
  * 以 nums[8], 4 结尾的最大连续子序列是 4、-1、2、1、-5、4，所以 dp(8) = dp(7) + 4 = 5
- *
+ * <p>
  * dp(i-1) <= 0, 则 dp(i) = nums[i]
  * dp(i-1) > 0, 则 dp(i) = dp(i - 1) + nums[i]
  */
@@ -30,6 +30,26 @@ public class Demo03MaxSubArray {
 		System.out.println(solution7(nums));
 		System.out.println(solution8(nums));
 		System.out.println(solution9(nums));
+		System.out.println("---------------");
+		System.out.println(solution10(nums));
+	}
+
+
+	private static int solution10(int[] nums) {
+		if (nums == null || nums.length == 0) {
+			return 0;
+		}
+		int dp = 0;
+		int max = dp;
+		for (int i = 0; i < nums.length; i++) {
+			if (dp <= 0) {
+				dp = nums[i];
+			} else {
+				dp = dp + nums[i];
+			}
+			max = Math.max(max, dp);
+		}
+		return max;
 	}
 
 	private static int solution9(int[] nums) {
@@ -65,7 +85,7 @@ public class Demo03MaxSubArray {
 		}
 		return max;
 	}
-	
+
 	private static int solution7(int[] nums) {
 		if (nums == null || nums.length == 0) {
 			return 0;

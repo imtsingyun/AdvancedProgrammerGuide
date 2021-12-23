@@ -13,12 +13,12 @@ public class Demo01 {
 		// 判断略
 		for (int begin = 1; begin < nums.length; begin++) {
 			int cur = begin;
-			Integer curval = nums[cur];
-			while (cur > 0 && curval < nums[cur - 1]) {
+			Integer curVal = nums[cur];
+			while (cur > 0 && curVal < nums[cur - 1]) {
 				nums[cur] = nums[cur - 1];
 				cur--;
 			}
-			nums[cur] = curval;
+			nums[cur] = curVal;
 		}
 	}
 }
