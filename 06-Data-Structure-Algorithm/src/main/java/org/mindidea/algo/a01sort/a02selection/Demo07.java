@@ -13,8 +13,8 @@ public class Demo07 {
 		for (int end = nums.length - 1; end > 0; end--) {
 			int maxIndex = 0;
 			for (int begin = 1; begin <= end; begin++) {
-				if (nums[begin] < nums[maxIndex]) {
-					maxIndex = begin - 1;
+				if (nums[begin] > nums[maxIndex]) {
+					maxIndex = begin;
 				}
 			}
 			Utils.swap(nums, maxIndex, end);
