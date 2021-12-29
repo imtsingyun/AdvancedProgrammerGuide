@@ -1,4 +1,4 @@
-package org.mindidea.algo.a01sort.a04quicksort;
+package org.mindidea.algo.a01sort.a04insertionsort;
 
 import org.mindidea.algo.zcommon.Utils;
 
