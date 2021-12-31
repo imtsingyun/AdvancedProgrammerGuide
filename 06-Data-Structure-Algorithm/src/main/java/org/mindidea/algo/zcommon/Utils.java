@@ -47,5 +47,25 @@ public class Utils {
         nums[i1] = nums[i2];
         nums[i2] = tmp;
     }
+
+    public static boolean isPositiveOrder(Integer[] nums) {
+        return isSorted(nums, true);
+    }
+
+    public static boolean isReverseOrder(Integer[] nums) {
+        return isSorted(nums, false);
+    }
+
+    private static boolean isSorted(Integer[] nums, boolean isPositive) {
+        for (int i = 1; i < nums.length; i++) {
+            if (isPositive && nums[i] < nums[i - 1]) {
+                return false;
+            }
+            if (!isPositive && nums[i] > nums[i - 1]) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
 
