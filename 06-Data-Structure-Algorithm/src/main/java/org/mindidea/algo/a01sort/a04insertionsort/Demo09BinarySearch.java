@@ -7,6 +7,7 @@ public class Demo09BinarySearch {
 		Integer[] nums = Utils.generateArr(100, 10);
 		sort(nums);
 		Utils.printArr(nums);
+		System.out.println(Utils.isPositiveOrder(nums));
 	}
 
 	private static void sort(Integer[] nums) {
