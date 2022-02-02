@@ -1,9 +1,12 @@
 package org.mindidea.A09字符串.A01蛮力算法;
 
-public class BruteForce01 {
+@SuppressWarnings("DuplicatedCode")
+public class BruteForce {
 	public static void main(String[] args) {
-		int idx = indexOf("Hello world", "or");
-		System.out.println(idx);
+		String text = "hello world";
+		String pattern = "or";
+		int res = indexOf(text, pattern);
+		System.out.println(res);
 	}
 
 	private static int indexOf(String text, String pattern) {
