@@ -31,8 +31,7 @@ public class KmpSolution {
 				pi++;
 				ti++;
 			} else {
-				ti -= pi - 1;
-				pi = 0;
+				pi = next[pi];
 			}
 		}
 		return (pi == plen) ? (ti - pi) : -1;
