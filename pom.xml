@@ -16,7 +16,6 @@
         <module>04-Java-Microservice</module>
         <module>05-Spring-Cloud</module>
         <module>06-data-structure-algorithm</module>
-        <module>06-Data-Structure-Algorithm</module>
     </modules>
 
     <properties>
