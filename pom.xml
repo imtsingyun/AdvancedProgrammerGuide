@@ -16,6 +16,8 @@
         <module>04-Java-Microservice</module>
         <module>05-Spring-Cloud</module>
         <module>06-data-structure-algorithm</module>
+        <module>07-Rabbitmq-Hello</module>
+        <module>08-Patterns</module>
     </modules>
 
     <properties>
