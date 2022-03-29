@@ -1,6 +1,4 @@
-package org.mindidea.singleton;
-
-import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader;
+package org.mindidea.creation.singleton;
 
 /**
  * 单例模式：懒汉加载，加锁，线程安全，性能差

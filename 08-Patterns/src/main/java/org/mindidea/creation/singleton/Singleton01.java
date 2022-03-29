@@ -1,4 +1,4 @@
-package org.mindidea.singleton;
+package org.mindidea.creation.singleton;
 
 /**
  * 单例模式1：饿汉模式，线程安全
