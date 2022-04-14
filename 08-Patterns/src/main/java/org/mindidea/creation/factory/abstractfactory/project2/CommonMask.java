@@ -1,12 +1,13 @@
-package org.mindidea.creation.factory.abstractfactory;
+package org.mindidea.creation.factory.abstractfactory.project2;
 
 public class CommonMask extends AbstractMask {
 
 	public CommonMask() {
 		this.price = 1;
 	}
+
 	@Override
-	void protectedMe() {
+	public void protectedMe() {
 		System.out.println("Common mask is protecting me, and price is " + price);
 	}
 }

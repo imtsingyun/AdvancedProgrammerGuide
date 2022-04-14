@@ -9,7 +9,6 @@ public class WulinFactory {
 			return new VanCar();
 		}
 		// 简单工厂模式，不适合生产过多的产品
-
 		return null;
 	}
 }

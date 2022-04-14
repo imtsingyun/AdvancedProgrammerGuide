@@ -1,4 +1,4 @@
-package org.mindidea.creation.factory.abstractfactory;
+package org.mindidea.creation.factory.abstractfactory.product1;
 
 
 public class RacingCar extends AbstractCar {
@@ -8,7 +8,7 @@ public class RacingCar extends AbstractCar {
 	}
 
 	@Override
-	void run() {
+	public void run() {
 		System.out.println("the racing car is running with " + engine);
 	}
 }
