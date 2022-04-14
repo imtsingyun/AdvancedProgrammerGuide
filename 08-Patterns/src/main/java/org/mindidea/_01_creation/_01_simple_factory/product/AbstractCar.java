@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public abstract class AbstractCar {
 
-	String engine;
+	protected String engine;
 
 	public abstract void run();
 }
