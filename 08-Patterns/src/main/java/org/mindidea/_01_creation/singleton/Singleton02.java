@@ -1,4 +1,4 @@
-package org.mindidea.creation.singleton;
+package org.mindidea._01_creation.singleton;
 
 /**
  * 单例模式：懒汉加载，线程不安全
