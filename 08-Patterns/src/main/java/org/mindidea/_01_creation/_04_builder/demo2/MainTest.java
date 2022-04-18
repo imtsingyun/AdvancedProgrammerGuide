@@ -1,4 +1,4 @@
-package org.mindidea._01_creation._04_builder;
+package org.mindidea._01_creation._04_builder.demo2;
 
 public class MainTest {
 	public static void main(String[] args) {
