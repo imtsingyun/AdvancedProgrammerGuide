@@ -1,4 +1,4 @@
-package org.mindidea._02_structural;
+package org.mindidea._02_structural._01_bridge.demo1pay;
 
 import org.mindidea._02_structural._01_bridge.demo1pay.channel.AlPay;
 import org.mindidea._02_structural._01_bridge.demo1pay.channel.Pay;
