@@ -1,6 +1,9 @@
-package org.mindidea._02_structural._00_adapter.demo1;
+package org.mindidea._02_structural._00_adapter.demo1.adp;
 
-public class Adapter extends AdapteeStockExchange implements Target {
+import org.mindidea._02_structural._00_adapter.demo1.dst.Target;
+import org.mindidea._02_structural._00_adapter.demo1.src.StockExchange;
+
+public class Adapter extends StockExchange implements Target {
 	@Override
 	public String xml2Json() {
 		String xml = getStockDataInXML();

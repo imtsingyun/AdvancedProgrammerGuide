@@ -1,10 +1,10 @@
-package org.mindidea._02_structural._00_adapter.demo1;
+package org.mindidea._02_structural._00_adapter.demo1.src;
 
 /**
  * 股票交易所，需要被适配的类
  * 该类是返回 xml 数据
  */
-public class AdapteeStockExchange {
+public class StockExchange {
 
 	/**
 	 * 获取股票数据，xml 格式
