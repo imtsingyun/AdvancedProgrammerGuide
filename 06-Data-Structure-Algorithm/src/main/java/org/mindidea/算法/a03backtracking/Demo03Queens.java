@@ -16,7 +16,9 @@ public class Demo03Queens {
 	 * @param n 皇后数量
 	 */
 	void init(int n) {
-		if (n < 1) return;
+		if (n < 1) {
+			throw new IllegalArgumentException("The number of queens must be greater than zero.");
+		}
 		cols = new int[n];
 		place(0);
 		System.out.println(n + "皇后共有:" + ways + "种摆法。");
