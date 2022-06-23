@@ -18,6 +18,7 @@
         <module>06-data-structure-algorithm</module>
         <module>07-Rabbitmq-Hello</module>
         <module>08-Patterns</module>
+        <module>09-Netty</module>
     </modules>
 
     <properties>
