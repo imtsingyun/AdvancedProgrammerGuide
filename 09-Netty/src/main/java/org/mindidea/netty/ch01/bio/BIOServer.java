@@ -27,16 +27,14 @@ public class BIOServer {
 		ServerSocket serverSocket = new ServerSocket(8000);
 		System.out.println("服务器启动成功");
 
+		//noinspection InfiniteLoopStatement
 		while (true) {
 			Socket socket = serverSocket.accept();
 			System.out.println("已连接一个客户端");
 
-			newCachedThreadPool.execute(new Runnable() {
-				@Override
-				public void run() {
-					System.out.println("ThreadName: " + Thread.currentThread().getName());
-					handler(socket);
-				}
+			newCachedThreadPool.execute(() -> {
+				System.out.println("ThreadName: " + Thread.currentThread().getName());
+				handler(socket);
 			});
 		}
 	}
