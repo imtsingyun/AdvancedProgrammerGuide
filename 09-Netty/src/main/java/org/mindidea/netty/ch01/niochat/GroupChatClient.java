@@ -36,7 +36,7 @@ public class GroupChatClient {
 	}
 
 	public void sendInfo(String info) {
-		info = username + "sad: " + info;
+		info = username + "-说: " + info;
 		try {
 			socketChannel.write(ByteBuffer.wrap(info.getBytes(StandardCharsets.UTF_8)));
 		} catch (Exception e) {
@@ -59,9 +59,8 @@ public class GroupChatClient {
 						String msg = new String(buff.array());
 						System.out.println(msg.trim());
 					}
+					iterator.remove();
 				}
-			} else {
-				System.out.println("没有可用通道");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
