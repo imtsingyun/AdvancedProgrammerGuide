@@ -5,6 +5,7 @@ import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
 import java.nio.channels.*;
 import java.nio.charset.StandardCharsets;
+import java.util.Iterator;
 
 public class GroupChatServer {
 
@@ -29,16 +30,19 @@ public class GroupChatServer {
 			while (true) {
 				int count = selector.select();
 				if (count > 0) {
-					for (SelectionKey selectedKey : selector.selectedKeys()) {
-						if (selectedKey.isAcceptable()) {
+					Iterator<SelectionKey> iterator = selector.selectedKeys().iterator();
+					while (iterator.hasNext()) {
+						SelectionKey key = iterator.next();
+						if (key.isAcceptable()) {
 							SocketChannel sc = listenChannel.accept();
 							sc.configureBlocking(false);
 							sc.register(selector, SelectionKey.OP_READ);
 							System.out.println(sc.getRemoteAddress() + " is online.");
 						}
-						if (selectedKey.isReadable()) {
-							readMsg(selectedKey);
+						if (key.isReadable()) {
+							readMsg(key);
 						}
+						iterator.remove();
 					}
 				} else {
 					System.out.println("waiting");
