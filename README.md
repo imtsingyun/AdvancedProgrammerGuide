@@ -2,7 +2,7 @@
 
 ## 项目目录
 
-- 00-Java-Core : Java 核心内容
+- Java 核心内容
     - Java 基础知识
         - Java 修饰符
         - 语法知识
@@ -44,12 +44,12 @@
         - BufferedWriter
         - BufferedInputStream
         - BufferedOutputStream
-- 01-Java-8-Action: Java8 实战
-- 02-Java-Concurrency: Java 并发编程
-- 03-Spring-Framework: Spring 框架
-- 04-Spring-Boot
-- 05-Spring-Cloud
-- 06-Data-Structure-Algorithm
+- Java8 实战
+- Java 并发编程
+- Spring 框架
+- Spring-Boot
+- Spring-Cloud
+- Data-Structure-Algorithm
 
 ## 面试题整理
 
