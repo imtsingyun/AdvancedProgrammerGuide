@@ -57,7 +57,6 @@
 
 #### 1. Exception 和 Error
 > 1. 都继承 Throwable 类，只有 Throwable 类型的实例才可以被抛出（throw）或（catch）
->
 > 2. Exception 是程序正常运行中可以预料的意外情况
 > 3. Error 则是会导致程序处于非正常、不可恢复状态，比如 OutOfMemoryError，StackOverflowError，NoClassDefFoundError
 > 4. 可检查 Exception 在代码中必须显式的进行捕获处理，编译期会检查
@@ -67,5 +66,11 @@
 
 #### 3. final、finally、finalize
 > 1. final
+> 2. finally
+> 3. finalize
 
 ### Java 进阶知识
+
+
+
+
