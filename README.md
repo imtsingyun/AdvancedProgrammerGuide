@@ -3,11 +3,11 @@
 ## 项目目录
 
 - 00-Java-Core : Java 核心内容
-    - core00_basic : Java 基础知识
+    - Java 基础知识
         - Java 修饰符
         - 语法知识
         - 基本数据类型
-    - core01_oop : Java 面向对象
+    - Java 面向对象
         - 类与对象
         - 封装
         - 继承
@@ -18,7 +18,7 @@
         - final
         - static
         - this 对象
-    - core02_api : 常用 API
+    - 常用 API
         - Object
         - Scanner
         - String
@@ -31,8 +31,8 @@
         - DateFormate
         - LocalDate
         - Calender
-    - core03_collection : Java 集合
-    - core04_io : Java IO 流
+    - Java 集合
+    - Java IO 流
         - File
         - FileWriter
         - FileReader
