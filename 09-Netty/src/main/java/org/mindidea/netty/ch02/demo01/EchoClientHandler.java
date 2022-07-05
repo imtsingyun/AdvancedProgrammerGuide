@@ -10,8 +10,8 @@ import io.netty.util.CharsetUtil;
 @ChannelHandler.Sharable
 public class EchoClientHandler extends SimpleChannelInboundHandler<ByteBuf> {
 	@Override
-	protected void channelRead0(ChannelHandlerContext ctx, ByteBuf byteBuf) throws Exception {
-		System.out.println("Client received: " + byteBuf.toString());
+	protected void channelRead0(ChannelHandlerContext ctx, ByteBuf in) throws Exception {
+		System.out.println("Client received: " + in.toString(CharsetUtil.UTF_8));
 	}
 
 	@Override
