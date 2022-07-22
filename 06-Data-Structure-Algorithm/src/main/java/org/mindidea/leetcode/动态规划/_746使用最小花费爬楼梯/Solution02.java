@@ -3,7 +3,7 @@ package org.mindidea.leetcode.动态规划._746使用最小花费爬楼梯;
 public class Solution02 {
 	public static void main(String[] args) {
 		int[] cost = new int[]{10, 15, 20};
-		System.out.println(new Solution01().minCostClimbingStairs(cost));
+		System.out.println(new Solution02().minCostClimbingStairs(cost));
 	}
 
 	public int minCostClimbingStairs(int[] cost) {
