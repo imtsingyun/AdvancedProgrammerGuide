@@ -1,7 +1,7 @@
 package org.mindidea._01_creation._00_singleton;
 
 /**
- * 单例模式：懒汉加载，加锁，线程安全，性能差
+ * 双重校验锁
  *
  * @author tsingyun
  * @version V1.0
@@ -16,6 +16,7 @@ public class Singleton04 {
 	}
 
 	public static Singleton04 getInstance() {
+		// Double check
 		if (instance == null) {
 			synchronized (Singleton04.class) {
 				if (instance == null) {
