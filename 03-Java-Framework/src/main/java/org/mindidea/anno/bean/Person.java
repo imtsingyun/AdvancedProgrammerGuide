@@ -1,7 +1,9 @@
 package org.mindidea.anno.bean;
 
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+@Scope
 @Component
 public class Person {
 	private String name;
